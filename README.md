@@ -1,7 +1,6 @@
-# Note-s ( Template / No JS )
+# Note-s
 
-# // HTML & CSS 📕 //
-
+# HTML & CSS 📕 
 
 ### [X] Create User Box ( Title & Note )
 
@@ -11,7 +10,7 @@
 
 ### [X] Make it Beautiful 👌
 
-# // Functionality 🐱‍👤 //
+# Functionality 🐱‍👤
 
 ### [X] User can see detail Note ( if available )
 
