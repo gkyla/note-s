@@ -2,7 +2,11 @@ import { setLocalStorageAndRender } from '../data/storage.js';
 
 const modalButtonAction = {
    openModal(modalEl, i) {
-      modalEl[i].classList.add('open');
+      if (modalEl !== undefined && i !== undefined) {
+         modalEl[i].classList.add('open');
+      } else {
+         modalEl.classList.add('open');
+      }
    },
    closeModal(modalEl) {
       modalEl.forEach((element) => {
@@ -14,6 +18,22 @@ const modalButtonAction = {
 function modalHandler(noteData) {
    const items = document.querySelectorAll('.item');
    const modalEl = document.querySelectorAll('.modal');
+   const addNoteBtn = document.querySelector('.add-note-btn');
+   const addNoteComponent = document.querySelector('add-note');
+
+   addNoteBtn.addEventListener('click', () => {
+      modalButtonAction.openModal(addNoteComponent);
+
+      addNoteComponent.addEventListener('click', (e) => {
+         const targetUser = e.target.id;
+         switch (targetUser) {
+            case 'close-add-note':
+            case 'modal-id':
+               modalButtonAction.closeModal(modalEl);
+               break;
+         }
+      });
+   });
 
    items.forEach((item) => {
       item.addEventListener('click', (e) => {
@@ -37,6 +57,7 @@ function modalHandler(noteData) {
                saveModalBtn.style.color = '#fff';
 
                break;
+            case 'modal-id':
             case 'close-modal':
                setTimeout(() => {
                   // Set Timeout 500ms to go back to default style after press close
@@ -82,4 +103,4 @@ function modalHandler(noteData) {
    });
 }
 
-export { modalHandler };
+export { modalHandler, modalButtonAction };
