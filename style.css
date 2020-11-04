@@ -19,10 +19,43 @@ body {
 .wrapper {
    width: 100%;
    height: 100%;
+   padding: 10px;
 }
 
-.box-content {
-   padding: 10px;
+header {
+   width: 100%;
+}
+
+.nav-home {
+   display: flex;
+   padding: 15px;
+   font-size: 1.2rem;
+   margin-bottom: 1rem;
+   background-color: #fbf7f0;
+   border-radius: 15px;
+   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+   border: 5px solid #555555;
+}
+
+.nav-home ul {
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 0 5px;
+   list-style: none;
+}
+
+.add-note-btn {
+   font-family: inherit;
+   font-size: 1.2rem;
+   padding: 0.7rem 1.3rem;
+   background-color: #555555;
+   cursor: pointer;
+   color: white;
+   border: transparent;
+   border-radius: 10px;
+   transition: 0.3s all ease-in-out;
 }
 
 form {
@@ -89,11 +122,13 @@ input.submit-btn:focus,
    position: relative;
    width: 100%;
    background-color: #fbf7f0;
-   border-radius: 7px;
+   border-radius: 15px;
    padding: 1.1rem;
+   min-height: 650px;
    margin-bottom: 1.5rem;
    display: flex;
    flex-direction: column;
+   border: 5px solid #555555;
 }
 
 .note-container {
@@ -133,7 +168,8 @@ input.submit-btn:focus,
    text-overflow: ellipsis;
 }
 
-.delete-item {
+.delete-item,
+.close-add-note {
    position: absolute;
    top: 0;
    right: 0;
@@ -193,7 +229,7 @@ input.submit-btn:focus,
    visibility: hidden;
    width: 100%;
    height: 100vh;
-   padding: 1.2rem;
+   padding: 1rem;
    display: flex;
    flex-direction: column;
    justify-content: center;
@@ -212,8 +248,17 @@ input.submit-btn:focus,
    position: relative;
    border-radius: 10px;
    width: 100%;
+   height: 100%;
    font-size: 1.3rem;
    background-color: #d9e4dd;
+}
+
+.form-create {
+   border-radius: 10px;
+   width: 100%;
+   height: 100% !important;
+   font-size: 1.3rem;
+   margin-bottom: 0 !important;
 }
 
 nav.nav-modal {
@@ -268,7 +313,7 @@ textarea.edit-text-modal {
 .save-modal {
    cursor: pointer;
    display: block;
-   padding: 0.75rem 1rem;
+   padding: 1rem;
    border: none;
    font-size: 1.1rem;
    font-family: inherit;
@@ -278,13 +323,14 @@ textarea.edit-text-modal {
 
 .close-modal:hover,
 .edit-modal:hover,
-.save-modal:hover {
+.save-modal:hover,
+.add-note-btn:hover {
    color: white;
    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .close-modal {
-   padding: 0.75rem 1.5rem !important;
+   padding: 1rem 1.5rem !important;
    border-top-left-radius: 10px;
 }
 
@@ -315,6 +361,25 @@ li.edit-link {
    font-size: 0.75rem;
 }
 
+/* Footer */
+
+footer {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 15px;
+   font-size: 1.2rem;
+   margin-bottom: 1rem;
+   background-color: #fbf7f0;
+   border-radius: 15px;
+   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+   border: 5px solid #555555;
+}
+footer a {
+   color: #555555;
+   text-decoration: none;
+}
+
 @media (min-width: 520px) {
    .sub {
       font-size: 1rem;
@@ -323,9 +388,19 @@ li.edit-link {
 
 @media (min-width: 688px) {
    .wrapper,
-   .modal-content {
+   .modal-content,
+   .box {
       font-size: 1.3rem;
-      max-width: 900px;
+      max-width: 950px;
+      height: auto !important;
+   }
+
+   .modal {
+      padding: 1.3rem !important;
+   }
+
+   .form-create {
+      padding: 1.5rem !important;
    }
 
    .wrapper {
