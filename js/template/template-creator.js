@@ -16,7 +16,7 @@ const createItemNote = (note, index) => `
    </div>
    <button class="open-edit" id="open-edit">Open</button>
 
-   <div class="modal">
+   <div class="modal" id="modal-id">
       <div class="modal-content">
          <nav class="nav-modal">
             <ul class="nav-modal-links">
