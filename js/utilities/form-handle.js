@@ -1,11 +1,12 @@
 import { getStorage, saveItemAndRender } from '../data/storage.js';
 import noteToObject from './data-format.js';
-
-const input = document.querySelector('input');
-const textArea = document.querySelector('textarea');
+import { modalButtonAction } from './modal-settings.js';
 
 function submitNoteData(e) {
    e.preventDefault();
+   const input = document.querySelector('input.front-add-input');
+   const textArea = document.querySelector('textarea.front-add-input');
+   const modalEl = document.querySelectorAll('.modal');
 
    const inputValue = input.value;
    const textAreaValue = textArea.value;
@@ -22,6 +23,9 @@ function submitNoteData(e) {
    const id = uniqueId(storage);
    const note = noteToObject(id, inputValue, textAreaValue);
    saveItemAndRender(note);
+
+   // Close Form / Modal after submit
+   modalButtonAction.closeModal(modalEl);
 
    this.reset();
 }
