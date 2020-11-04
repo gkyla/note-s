@@ -124,11 +124,14 @@ input.submit-btn:focus,
    background-color: #fbf7f0;
    border-radius: 15px;
    padding: 1.1rem;
-   min-height: 650px;
    margin-bottom: 1.5rem;
    display: flex;
    flex-direction: column;
    border: 5px solid #555555;
+}
+
+.box-note {
+   min-height: 650px;
 }
 
 .note-container {
