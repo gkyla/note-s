@@ -37,7 +37,7 @@ function render(noteData) {
 function textAreaRowSetting() {
    // Set Media Query
    const setMediaWidth = window.matchMedia('(min-height:600px)');
-   const getRows = document.querySelectorAll('textarea.edit-text-modal');
+   const getRows = document.querySelectorAll('textarea');
 
    // When height <= 600px , rows will be 5
    if (setMediaWidth.matches) {
