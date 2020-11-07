@@ -19,7 +19,7 @@ class AddNote extends HTMLElement {
                     class="front-add-input"
                     id="note"
                     cols="20"
-                    rows="12"
+                    rows="6"
                     placeholder="I'll wake up earlier tomorrow 😁"
                     required
                 ></textarea>

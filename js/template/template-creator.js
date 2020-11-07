@@ -48,8 +48,8 @@ const createItemNote = (note, index) => `
                <textarea
                   name="edit-${index}"
                   id="edit-${index}"
-                  rows="12"
                   cols="30"
+                  rows="6"
                   wrap="hard"
                   class="edit-text-modal"
                   disabled
@@ -62,7 +62,7 @@ const createItemNote = (note, index) => `
 `;
 
 const CreateEmptyDataTemplate = () => `
-   <div class="no-item"> <h1>No Note available 😭</h1> </div>
+   <div class="no-item"> <h1>No Note available</h1> <button class="add-note-btn">+ Add Note</button> </div>
 `;
 
 export { createItemNote, CreateEmptyDataTemplate };
