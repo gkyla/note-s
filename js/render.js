@@ -27,24 +27,10 @@ function render(noteData) {
    });
 
    // When height <= 600px , rows will be 5
-   textAreaRowSetting();
 
    // Call handler every render new note item
    modalHandler(noteData); // Handler for open,close modal
    deleteHandler(noteData); // Handler for delete item
-}
-
-function textAreaRowSetting() {
-   // Set Media Query
-   const setMediaWidth = window.matchMedia('(min-height:600px)');
-   const getRows = document.querySelectorAll('textarea');
-
-   // When height <= 600px , rows will be 5
-   if (setMediaWidth.matches) {
-      getRows.forEach((textarea) => (textarea.rows = 12));
-   } else {
-      getRows.forEach((textarea) => (textarea.rows = 5));
-   }
 }
 
 export { render };
