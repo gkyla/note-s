@@ -18,20 +18,22 @@ const modalButtonAction = {
 function modalHandler(noteData) {
    const items = document.querySelectorAll('.item');
    const modalEl = document.querySelectorAll('.modal');
-   const addNoteBtn = document.querySelector('.add-note-btn');
+   const addNoteBtn = document.querySelectorAll('.add-note-btn');
    const addNoteComponent = document.querySelector('add-note');
 
-   addNoteBtn.addEventListener('click', () => {
-      modalButtonAction.openModal(addNoteComponent);
+   addNoteBtn.forEach((addBtn) => {
+      addBtn.addEventListener('click', () => {
+         modalButtonAction.openModal(addNoteComponent);
 
-      addNoteComponent.addEventListener('click', (e) => {
-         const targetUser = e.target.id;
-         switch (targetUser) {
-            case 'close-add-note':
-            case 'modal-id':
-               modalButtonAction.closeModal(modalEl);
-               break;
-         }
+         addNoteComponent.addEventListener('click', (e) => {
+            const targetUser = e.target.id;
+            switch (targetUser) {
+               case 'close-add-note':
+               case 'modal-id':
+                  modalButtonAction.closeModal(modalEl);
+                  break;
+            }
+         });
       });
    });
 
