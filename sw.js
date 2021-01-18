@@ -1,6 +1,6 @@
 const CACHE_NAME = 'note-s-v1';
 const CACHE_ASSETS = [
-  '/',
+  '/note-s/',
   '/note-s/index.html',
   '/note-s/style.css',
   '/note-s/sw.js',
