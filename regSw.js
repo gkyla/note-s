@@ -1,7 +1,7 @@
 function regSw() {
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker
-      .register('sw.js', { scope: '/' })
+      .register('sw.js')
       .then((reg) => console.log('Register Success'))
       .catch((err) => console.error('Error : ', err));
   } else {
